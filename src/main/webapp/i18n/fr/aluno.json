@@ -1,0 +1,25 @@
+{
+    "aulaAluraApp": {
+        "aluno" : {
+            "home": {
+                "title": "Alunos",
+                "createLabel": "Créer un nouveau Aluno",
+                "createOrEditLabel": "Créer ou éditer un Aluno"
+            },
+            "created": "Un nouveau Aluno a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Aluno avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Aluno avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Aluno {{ id }} ?"
+            },
+            "detail": {
+                "title": "Aluno"
+            },
+            "nome": "Nome",
+            "idade": "Idade",
+            "endereco": "Endereco",
+            "dataNascimento": "DataNascimento"
+        }
+    }
+}
+

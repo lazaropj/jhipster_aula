@@ -1,0 +1,54 @@
+<div>
+    <h2 translate="aulaAluraApp.aluno.home.title">Alunos</h2>
+    <jh-alert></jh-alert>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <button class="btn btn-primary" ui-sref="aluno.new">
+                    <span class="glyphicon glyphicon-flash"></span> <span translate="aulaAluraApp.aluno.home.createLabel">Create a new Aluno</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr jh-sort="predicate" ascending="reverse" callback="reset()">
+                    <th jh-sort-by="id"><span translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="nome"><span translate="aulaAluraApp.aluno.nome">Nome</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="idade"><span translate="aulaAluraApp.aluno.idade">Idade</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="endereco"><span translate="aulaAluraApp.aluno.endereco">Endereco</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="dataNascimento"><span translate="aulaAluraApp.aluno.dataNascimento">DataNascimento</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody infinite-scroll="loadPage(page + 1)" infinite-scroll-disabled="links['last'] == page">
+                <tr ng-repeat="aluno in alunos track by aluno.id">
+                    <td><a ui-sref="aluno.detail({id:aluno.id})">{{aluno.id}}</a></td>
+                    <td>{{aluno.nome}}</td>
+                    <td>{{aluno.idade}}</td>
+                    <td>{{aluno.endereco}}</td>
+                        <td>{{aluno.dataNascimento | date:'mediumDate'}}</td>
+                    <td>
+                        <button type="submit"
+                                ui-sref="aluno.detail({id:aluno.id})"
+                                class="btn btn-info btn-sm">
+                            <span class="glyphicon glyphicon-eye-open"></span>&nbsp;<span translate="entity.action.view"> View</span>
+                        </button>
+                        <button type="submit"
+                                ui-sref="aluno.edit({id:aluno.id})"
+                                class="btn btn-primary btn-sm">
+                            <span class="glyphicon glyphicon-pencil"></span>&nbsp;<span translate="entity.action.edit"> Edit</span>
+                        </button>
+                        <button type="submit"
+                                ui-sref="aluno.delete({id:aluno.id})"
+                                class="btn btn-danger btn-sm">
+                            <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="entity.action.delete"> Delete</span>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

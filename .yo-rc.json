@@ -1,0 +1,24 @@
+{
+  "generator-jhipster": {
+    "baseName": "aula_alura",
+    "packageName": "br.com.alura",
+    "packageFolder": "br/com/alura",
+    "authenticationType": "session",
+    "hibernateCache": "no",
+    "clusteredHttpSession": "no",
+    "websocket": "no",
+    "databaseType": "sql",
+    "devDatabaseType": "mysql",
+    "prodDatabaseType": "mysql",
+    "searchEngine": "no",
+    "useSass": false,
+    "buildTool": "maven",
+    "frontendBuilder": "grunt",
+    "enableTranslation": true,
+    "enableSocialSignIn": true,
+    "rememberMeKey": "e3068297bd953c9397a1592d355e271ff52d2d3c",
+    "testFrameworks": [
+      "gatling"
+    ]
+  }
+}

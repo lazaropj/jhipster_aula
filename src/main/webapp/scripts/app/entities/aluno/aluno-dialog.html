@@ -1,0 +1,74 @@
+
+<form name="editForm" role="form" novalidate ng-submit="save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="clear()">&times;</button>
+        <h4 class="modal-title" id="myAlunoLabel" translate="aulaAluraApp.aluno.home.createOrEditLabel">Create or edit a Aluno</h4>
+    </div>
+    <div class="modal-body">
+        <jh-alert-error></jh-alert-error>
+        <div class="form-group">
+            <label for="id" translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="aluno.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="aulaAluraApp.aluno.nome" for="field_nome">Nome</label>
+            <input type="text" class="form-control" name="nome" id="field_nome"
+                    ng-model="aluno.nome"
+                    required />
+            <div ng-show="editForm.nome.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.nome.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="aulaAluraApp.aluno.idade" for="field_idade">Idade</label>
+            <input type="number" class="form-control" name="idade" id="field_idade"
+                    ng-model="aluno.idade"
+                    required />
+            <div ng-show="editForm.idade.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.idade.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.idade.$error.number" translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="aulaAluraApp.aluno.endereco" for="field_endereco">Endereco</label>
+            <input type="text" class="form-control" name="endereco" id="field_endereco"
+                    ng-model="aluno.endereco"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="aulaAluraApp.aluno.dataNascimento" for="field_dataNascimento">DataNascimento</label>
+            <input id="field_dataNascimento" type="text" class="form-control" uib-datepicker-popup="{{dateformat}}" ng-model="aluno.dataNascimento" is-open="datePickerForDataNascimento.status.opened"
+            required/>
+            <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="datePickerForDataNascimentoOpen($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+            </span>
+            <div ng-show="editForm.dataNascimento.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.dataNascimento.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

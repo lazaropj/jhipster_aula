@@ -1,0 +1,13 @@
+jhipster-prod-mysql:
+  container_name: aula_alura-prod-mysql
+  image: mysql:5.7.9
+  # volumes:
+  # - ~/volumes/jhipster/aula_alura/prod-mysql/:/var/lib/mysql/
+  environment:
+  - MYSQL_USER=root
+  - MYSQL_ALLOW_EMPTY_PASSWORD=yes
+  - MYSQL_DATABASE=aula_alura
+  ports:
+  - "3306:3306"
+  command: mysqld --lower_case_table_names=1
+

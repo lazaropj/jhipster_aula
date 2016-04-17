@@ -1,0 +1,54 @@
+
+<div>
+    <h2><span translate="aulaAluraApp.aluno.detail.title">Aluno</span> {{aluno.id}}</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th translate="entity.detail.field">Field</th>
+                <th translate="entity.detail.value">Value</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    <span translate="aulaAluraApp.aluno.nome">Nome</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{aluno.nome}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="aulaAluraApp.aluno.idade">Idade</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{aluno.idade}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="aulaAluraApp.aluno.endereco">Endereco</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{aluno.endereco}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="aulaAluraApp.aluno.dataNascimento">DataNascimento</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{aluno.dataNascimento | date:'mediumDate'}}</span>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>
